@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Scop\Manager;
 
 use App\Interfaces\IsManageable;
@@ -16,19 +18,33 @@ final class Scop implements Manager
         $this->serializer = $serializer;
     }
 
-    public function create(IsManageable $entity): IsManageable
+    public function createOrUpdate(IsManageable $entity): IsManageable
     {
-        // TODO: Implement create() method.
+        return $entity;
     }
 
-    public function delete(IsManageable $entity): IsManageable
+    public function delete(IsManageable $entity): Manager
     {
-        // TODO: Implement delete() method.
+        return $this;
+    }
+
+    public function find(array $by)
+    {
+       // @TODO: use doctrine ?
+    }
+
+    public function findOne(array $by): IsManageable
+    {
+        // @TODO: use doctrine ?
+    }
+
+    public function toJson(IsManageable $entity): string
+    {
+        return $this->serializer->serialize($entity, 'json');
     }
 
     public function fromJson(string $json): IsManageable
     {
-       return $this->serializer->deserialize($json, Entity\Scop::class, 'json');
+        return $this->serializer->deserialize($json, Entity\Scop::class, 'json');
     }
-
 }

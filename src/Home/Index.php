@@ -1,19 +1,16 @@
 <?php
 
-namespace App\Home;
+declare(strict_types=1);
 
-use Symfony\Component\HttpFoundation\Response;
+namespace App\Home;
 
 class Index
 {
     public function __construct()
     {
-
     }
 
     public function __invoke()
     {
-        return ;
     }
-
 }

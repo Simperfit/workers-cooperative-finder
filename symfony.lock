@@ -1,4 +1,13 @@
 {
+    "behat/symfony2-extension": {
+        "version": "2.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.1",
+            "ref": "6b63fb76d3bb2dd16098f12adf6d6ca844e21862"
+        }
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {

@@ -1,13 +1,19 @@
 <?php
 
-namespace App\Scop\Directory\Action;
+declare(strict_types=1);
 
+namespace App\Scop\Directory\Api\Action;
+
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
-class Edit extends Add
+final class Edit extends Add
 {
-    public function __invoke(Request $request)
+    /**
+     * @Route(path="/scop/edit", methods={"POST"}, name="edit_scop")
+     */
+    public function __invoke(Request $request): JsonResponse
     {
         return parent::__invoke($request);
     }
